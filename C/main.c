@@ -31,7 +31,7 @@ int main()
         clock_t t_comienzo, t_final;
         double prom = 0;
 
-        for(m = 0; m < 10; m++){ // se repite la multiplicación 10 veces
+        for(m = 0; m < 10; m++){ // se repite la multiplicaciÃ³n 10 veces
             t_comienzo = clock();
             for(i = 0; i < col_row; i++){
                 for(j = 0; j < col_row; j++){
@@ -42,17 +42,17 @@ int main()
                 }
             }
             t_final = clock();
-            prom += ((double)(t_final - t_comienzo)/CLOCKS_PER_SEC)*1000;
+            int elementos = col_row*col_row;
+            t = ((double)(t_final - t_comienzo)/CLOCKS_PER_SEC)*1000;
+            prom += t / ((col_row*elementos) + ((col_row - 1)*elementos));
         }
-
+        
         prom = prom / 10;
 
-        int elementos = col_row*col_row;
-        double t = prom / ((col_row*elementos) + ((col_row - 1)*elementos));
-
         x[posicion] = col_row;
-        y[posicion] = t;
+        y[posicion] = prom;
         posicion++;
+
 
     }
 
