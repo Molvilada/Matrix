@@ -43,10 +43,10 @@ int main()
             }
             t_final = clock();
             int elementos = col_row*col_row;
-            t = ((double)(t_final - t_comienzo)/CLOCKS_PER_SEC)*1000;
+            double t = ((double)(t_final - t_comienzo)/CLOCKS_PER_SEC)*1000;
             prom += t / ((col_row*elementos) + ((col_row - 1)*elementos));
         }
-        
+
         prom = prom / 10;
 
         x[posicion] = col_row;
